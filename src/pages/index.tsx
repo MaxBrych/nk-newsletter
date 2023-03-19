@@ -6,18 +6,21 @@ import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import Main from "@/components/Main";
 
-const postQuery = groq`*[_type == "post"]{
+export const revalidate = 20;
+const postQuery = groq`*[_type == "newsletter"]{
   _id,
   title, 
   slug,
   description,
   imgURL,
+  mainImage,
   link
 }`;
 
 const landingPageQuery = groq`*[_type == "landingpage"]{
   name,
-  description
+  description,
+  cta
 }`;
 
 export const getStaticProps = async () => {
@@ -36,15 +39,15 @@ export default function Home({
 }) {
   return (
     <>
-      <div className="flex flex-col items-center justify-between min-h-screen font-sans">
+      <div className="flex flex-col justify-start min-h-screen font-sans md:items-center">
         <Header />
-        <div className="max-w-6xl px-4">
+        <div className="max-w-6xl min-h-screen px-4">
           <Main response={landingPageData} />
           <Newsletter posts={postData} />
         </div>
         <Footer />
         <div className="absolute top-0 left-0 w-2/3 mr-4 rounded-full -z-10 bg-cyan-80 opacity-10 h-1/3 light:mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-2/3 mr-4 rounded-full -z-10 bg-cyan-80 opacity-10 h-1/3 light:mix-blend-multiply filter blur-3xl animate-blob"></div>
+        {/*<div className="absolute bottom-0 right-0 w-2/3 mr-4 rounded-full -z-10 bg-cyan-80 opacity-10 h-1/3 light:mix-blend-multiply filter blur-3xl animate-blob"></div>*/}
         <div className="absolute w-full h-full mr-4 rounded-full -z-10 bg-cyan-90 opacity-10 light:mix-blend-multiply filter blur-3xl animate-blob"></div>
       </div>
     </>

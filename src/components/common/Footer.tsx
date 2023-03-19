@@ -3,17 +3,23 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="flex items-center justify-center w-full h-16 gap-4 bg-white">
+    <div className="flex items-center justify-center w-full h-16 gap-4 bg-white border border-t-dark-90">
       <Link
-        className="text-base"
+        className="text-xs md:text-base"
         href={"https://www.nordkurier.de/datenschutz"}
       >
         Datenschutz
       </Link>
-      <Link className="text-base" href={"https://www.nordkurier.de/impressum"}>
+      <Link
+        className="text-xs md:text-base"
+        href={"https://www.nordkurier.de/impressum"}
+      >
         Impressum
       </Link>
-      <Link className="text-base" href={"https://www.nordkurier.de/agb"}>
+      <Link
+        className="text-xs md:text-base"
+        href={"https://www.nordkurier.de/agb"}
+      >
         AGB
       </Link>
     </div>

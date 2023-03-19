@@ -27,6 +27,7 @@
     "src/lib/sanity.preview",
     "src/components/PreviewMovies",
     "src/components/PreviewMovie",
+    "src/pages/[slug].tsx",
     "src/pages/[slug]"
   ],
   "exclude": ["node_modules"],

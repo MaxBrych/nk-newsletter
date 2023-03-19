@@ -1,0 +1,21 @@
+// ./components/PreviewMovies.tsx
+
+import Link from "next/link";
+//import { usePreview } from "../lib/sanity.preview";
+import Newsletter from "./Newsletter";
+
+export default function PreviewMovies({ query }: { query: string }) {
+  const data = usePreview(null, query);
+
+  return (
+    <>
+      <Newsletter posts={data} />
+      <Link
+        className="fixed bottom-0 right-0 p-6 font-bold text-white bg-blue-500"
+        href="/api/exit-preview"
+      >
+        Exit Preview
+      </Link>
+    </>
+  );
+}
