@@ -21,12 +21,12 @@ const landingPageQuery = groq`*[_type == "landingpage"]{
   description,
   cta
 }`;
-export const revalidate = 30;
+export const revalidate = 10;
 export const getStaticProps = async () => {
   const postData = await client.fetch(postQuery);
   const landingPageData = await client.fetch(landingPageQuery);
 
-  return { props: { postData, landingPageData } };
+  return { props: { postData, landingPageData }, revalidate: 10 };
 };
 
 export default function Home({
