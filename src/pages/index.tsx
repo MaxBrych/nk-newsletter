@@ -6,7 +6,6 @@ import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import Main from "@/components/Main";
 
-export const revalidate = 20;
 const postQuery = groq`*[_type == "newsletter"]{
   _id,
   title, 
@@ -22,7 +21,7 @@ const landingPageQuery = groq`*[_type == "landingpage"]{
   description,
   cta
 }`;
-
+export const revalidate = 30;
 export const getStaticProps = async () => {
   const postData = await client.fetch(postQuery);
   const landingPageData = await client.fetch(landingPageQuery);

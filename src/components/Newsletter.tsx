@@ -27,7 +27,7 @@ export default function Newsletter({ posts }: { posts: SanityDocument[] }) {
               alt={post.title}
             />
             <div className="w-full pt-4">
-              <h2 className="text-lg font-semibold md:text-xl text-dark-10">
+              <h2 className="text-lg leading-5 md:leading-6 font-semibold md:text-xl text-dark-10">
                 {post.title}
               </h2>
               <p className="text-sm md:text-sm text-dark-40">

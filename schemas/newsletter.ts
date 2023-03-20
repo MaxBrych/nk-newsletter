@@ -29,11 +29,6 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: "imgURL",
-      title: "Image URL",
-      type: "url",
-    }),
   ],
 
   preview: {
