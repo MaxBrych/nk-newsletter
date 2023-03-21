@@ -4,7 +4,7 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <div className="flex items-center justify-center w-full h-16 bg-white">
+    <div className="flex items-center justify-center w-full h-16 bg-white border border-b-dark-90">
       <Link href={"https://www.nordkurier.de/"}>
         <Image
           src={
