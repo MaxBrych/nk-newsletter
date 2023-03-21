@@ -12,7 +12,7 @@ export default function Newsletter({ posts }: { posts: SanityDocument[] }) {
       <Head>
         <title>{posts.length} Newsletter</title>
       </Head>
-      <main className="flex flex-1 gap-4 py-6 mx-auto mb-4 overflow-x-auto divide-y md:gap-6 md:grid md:grid-cols-3">
+      <main className="flex flex-1 gap-4 py-6 mx-auto mb-4 overflow-x-auto  md:gap-6 md:grid md:grid-cols-3">
         {posts.map((post) => (
           <Link
             key={post._id}
