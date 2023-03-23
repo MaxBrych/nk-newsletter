@@ -10,7 +10,7 @@ export default function Newsletter({ posts }: { posts: SanityDocument[] }) {
   return (
     <>
       <Head>
-        <title>Nordkurier Newsletter</title>
+        <title>Nordkurier Newsletter Preview</title>
       </Head>
       <main className="flex flex-1 gap-4 px-4 py-6 mx-auto mb-4 overflow-x-auto md:gap-6 md:grid md:grid-cols-3">
         {posts.map((post) => (
